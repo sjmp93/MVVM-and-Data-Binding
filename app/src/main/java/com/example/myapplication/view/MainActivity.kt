@@ -16,6 +16,7 @@ import com.example.myapplication.vm.MainViewModel
 class MainActivity : AppCompatActivity() {
     private val MY_PERMISSIONS_REQUEST = 0
     private lateinit var viewModel: MainViewModel
+
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
 
@@ -23,13 +24,6 @@ class MainActivity : AppCompatActivity() {
             R.layout.activity_main)
         viewModel = MainViewModel()
 
-
-        //binding.btDevice = bluetoothAdapter
-
-        //Set BT initial status according to system status
-        //TODO
-        //if(bluetoothAdapter.isEnabled == binding.viewmodel.data.value!!.binary)
-        //    binding.viewmodel.switchBT()
         ActivityCompat.requestPermissions(this,
             arrayOf(Manifest.permission.ACCESS_COARSE_LOCATION,Manifest.permission.BLUETOOTH, Manifest.permission.BLUETOOTH_ADMIN),
             MY_PERMISSIONS_REQUEST);
@@ -42,7 +36,6 @@ class MainActivity : AppCompatActivity() {
         super.onStart()
         val bluetoothStatusIntent = Intent(BluetoothAdapter.ACTION_STATE_CHANGED)
         val intentFilter = IntentFilter(bluetoothStatusIntent.action)
-        //eventReceiver!!.onReceive(this, bluetoothStatusIntent)
         registerReceiver(viewModel.btEventReceiver, intentFilter)
     }
 }
