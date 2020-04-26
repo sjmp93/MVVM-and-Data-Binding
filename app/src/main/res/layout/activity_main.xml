@@ -6,6 +6,8 @@
     <data>
         <variable name="viewmodel"
                   type="com.example.myapplication.vm.MainViewModel"/>
+        <variable name="btDevice"
+            type="android.bluetooth.BluetoothAdapter"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -28,7 +30,8 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bt_switch"
-            android:onClick="@{() -> viewmodel.switch()}"
+            android:onClick="@{() -> viewmodel._switchBT()}"
+            android:checked="@{viewmodel.data.binary}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.498"
