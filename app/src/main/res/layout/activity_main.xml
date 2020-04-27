@@ -30,7 +30,7 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="@string/bt_switch"
-            android:onClick="@{() -> viewmodel._switchBT()}"
+            android:onClick="@{() -> viewmodel.switchBT()}"
             android:checked="@{viewmodel.data.binary}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
