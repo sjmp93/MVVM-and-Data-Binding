@@ -6,8 +6,6 @@
     <data>
         <variable name="viewmodel"
                   type="com.example.myapplication.vm.MainViewModel"/>
-        <variable name="btDevice"
-            type="android.bluetooth.BluetoothAdapter"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
