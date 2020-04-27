@@ -9,10 +9,9 @@ class MainViewModel : ViewModel(){
 
     init{
         data = MutableLiveData()
-        data.value = TextData()
     }
 
-    fun push(){
+    fun switchBT(){
         var _data = data.value ?: TextData()
         _data.commute()
         data.value = _data

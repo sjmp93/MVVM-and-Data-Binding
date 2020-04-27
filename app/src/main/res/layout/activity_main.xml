@@ -6,6 +6,8 @@
     <data>
         <variable name="viewmodel"
                   type="com.example.myapplication.vm.MainViewModel"/>
+        <variable name="btDevice"
+            type="android.bluetooth.BluetoothAdapter"/>
     </data>
 
     <androidx.constraintlayout.widget.ConstraintLayout
@@ -17,22 +19,25 @@
             android:id="@+id/textView"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="@{viewmodel.data.text}"
+            android:text="@{viewmodel.data.binary ? @string/bt_enabled : @string/bt_disabled}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintLeft_toLeftOf="parent"
             app:layout_constraintRight_toRightOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
 
-        <Button
-            android:id="@+id/button"
+        <Switch
+            android:id="@+id/switch1"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:onClick="@{() -> viewmodel.push()}"
-            android:text="Commute"
+            android:text="@string/bt_switch"
+            android:onClick="@{() -> viewmodel.switchBT()}"
+            android:checked="@{viewmodel.data.binary}"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.762" />
 
 
     </androidx.constraintlayout.widget.ConstraintLayout>
