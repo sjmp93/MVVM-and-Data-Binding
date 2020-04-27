@@ -9,4 +9,5 @@ ViewModel properties will be based on a data model that implements all the statu
 
 The app consists on a status text with two possible values: "Enabled" or  "Disabled"; and a button wich, when pressed, will trigger a method from the ViewModel, that will modify the text value, updating the UI through an Observer.
 
-![Screenshot](Screenshot.png)
+![Screenshot](screenshot.png)
+![App Bluetooth state is coherent with System Bluetooth state](screenshot-bt-coherence.png)
